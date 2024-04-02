@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "dBdCAqeZPcWIljqD+h/4XMhfHFFw/W2Q10iq8oi361XEtqpUkz03ROjBart/tDjg5RFTlNfhRde8zu5XtqYjCA==",
+  "dgSpecHash": "x2XKRWcXJFBlLHl4tJhX7gY6pNnOVcGjd54QIa5n9KwpX47+9Xm78yx4OpHN7mORQepKEy5YTlKBvuwQQQrRGw==",
   "success": true,
-  "projectFilePath": "D:\\Educacion\\Fidelitas\\IC2024\\Programacion Avanzada\\proyectos de CS\\proyectoPrograAvanzadaGrupo1\\proyectoPrograAvanzadaGrupo1\\proyectoPrograAvanzadaGrupo1.csproj",
+  "projectFilePath": "D:\\GIT\\repositories\\PrograAvanzada\\proyectoPrograAvanzadaGrupo1\\proyectoPrograAvanzadaGrupo1\\proyectoPrograAvanzadaGrupo1.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\cquir\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\cquir\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

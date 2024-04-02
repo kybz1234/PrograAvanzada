@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Educacion\\Fidelitas\\IC2024\\Programacion Avanzada\\proyectos de CS\\proyectoPrograAvanzadaGrupo1\\proyectoPrograAvanzadaGrupo1\\proyectoPrograAvanzadaGrupo1.csproj": {}
+    "D:\\GIT\\repositories\\PrograAvanzada\\proyectoPrograAvanzadaGrupo1\\proyectoPrograAvanzadaGrupo1\\proyectoPrograAvanzadaGrupo1.csproj": {}
   },
   "projects": {
-    "D:\\Educacion\\Fidelitas\\IC2024\\Programacion Avanzada\\proyectos de CS\\proyectoPrograAvanzadaGrupo1\\proyectoPrograAvanzadaGrupo1\\proyectoPrograAvanzadaGrupo1.csproj": {
+    "D:\\GIT\\repositories\\PrograAvanzada\\proyectoPrograAvanzadaGrupo1\\proyectoPrograAvanzadaGrupo1\\proyectoPrograAvanzadaGrupo1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Educacion\\Fidelitas\\IC2024\\Programacion Avanzada\\proyectos de CS\\proyectoPrograAvanzadaGrupo1\\proyectoPrograAvanzadaGrupo1\\proyectoPrograAvanzadaGrupo1.csproj",
+        "projectUniqueName": "D:\\GIT\\repositories\\PrograAvanzada\\proyectoPrograAvanzadaGrupo1\\proyectoPrograAvanzadaGrupo1\\proyectoPrograAvanzadaGrupo1.csproj",
         "projectName": "proyectoPrograAvanzadaGrupo1",
-        "projectPath": "D:\\Educacion\\Fidelitas\\IC2024\\Programacion Avanzada\\proyectos de CS\\proyectoPrograAvanzadaGrupo1\\proyectoPrograAvanzadaGrupo1\\proyectoPrograAvanzadaGrupo1.csproj",
+        "projectPath": "D:\\GIT\\repositories\\PrograAvanzada\\proyectoPrograAvanzadaGrupo1\\proyectoPrograAvanzadaGrupo1\\proyectoPrograAvanzadaGrupo1.csproj",
         "packagesPath": "C:\\Users\\cquir\\.nuget\\packages\\",
-        "outputPath": "D:\\Educacion\\Fidelitas\\IC2024\\Programacion Avanzada\\proyectos de CS\\proyectoPrograAvanzadaGrupo1\\proyectoPrograAvanzadaGrupo1\\obj\\",
+        "outputPath": "D:\\GIT\\repositories\\PrograAvanzada\\proyectoPrograAvanzadaGrupo1\\proyectoPrograAvanzadaGrupo1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\cquir\\AppData\\Roaming\\NuGet\\NuGet.Config",
