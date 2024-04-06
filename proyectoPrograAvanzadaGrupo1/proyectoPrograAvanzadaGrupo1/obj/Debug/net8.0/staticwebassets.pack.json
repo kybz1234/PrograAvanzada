@@ -181,6 +181,10 @@
       "PackagePath": "staticwebassets\\proyectoPrograAvanzadaGrupo1.bundle.scp.css"
     },
     {
+      "Id": "D:\\GIT\\repositories\\PrograAvanzada\\proyectoPrograAvanzadaGrupo1\\proyectoPrograAvanzadaGrupo1\\wwwroot\\css\\admin.css",
+      "PackagePath": "staticwebassets\\css\\admin.css"
+    },
+    {
       "Id": "D:\\GIT\\repositories\\PrograAvanzada\\proyectoPrograAvanzadaGrupo1\\proyectoPrograAvanzadaGrupo1\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },

@@ -2,22 +2,38 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Mvc;
 using proyectoPrograAvanzadaGrupo1.Models;
+using Microsoft.Data.SqlClient;
+using Microsoft.AspNetCore.Authorization;
 using System.Diagnostics;
+using System.Security.Claims;
+using Microsoft.EntityFrameworkCore;
 
 namespace proyectoPrograAvanzadaGrupo1.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        private readonly DatabaseContext _context;
+        public HomeController(DatabaseContext context)
         {
-            _logger = logger;
+            _context = context;
         }
+
+       // private readonly ILogger<HomeController> _logger;
+
+        //public HomeController(ILogger<HomeController> logger)
+       // {
+        //    _logger = logger;
+        //}
 
         public IActionResult Index()
         {
-            return View();
+
+            var username = HttpContext.User.Identity.Name;
+            ViewData["Username"] = username;
+
+            List<Producto> Productos = _context.Productos.ToList();
+            return View(Productos);
         }
 
         public IActionResult Privacy()

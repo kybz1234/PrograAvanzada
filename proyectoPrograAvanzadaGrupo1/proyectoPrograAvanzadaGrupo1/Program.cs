@@ -1,9 +1,18 @@
 using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using proyectoPrograAvanzadaGrupo1.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+//dbcontext configuration
+builder.Services.AddDbContext<DatabaseContext>(options => options.UseSqlServer(
+    builder.Configuration.GetConnectionString("DefaultConnection")
+    ));
+
+
 
 builder.Services.AddSession(options =>
 {
@@ -16,6 +25,9 @@ builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationSc
 {
     option.LoginPath = "/Acceso/Login";
 });
+
+
+
 
 var app = builder.Build();
 

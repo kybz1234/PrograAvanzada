@@ -1,0 +1,44 @@
+﻿@{
+    Layout = "../Shared/Admin_layout.cshtml";
+}
+@model List<User>;
+
+<div class="container-fluid px-4">
+    <h1 class="mt-4">Usuarios</h1>
+    <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item"><a asp-area="" asp-controller="Admin" asp-action="Home">Inicio</a></li>
+        <li class="breadcrumb-item active">Tables</li>
+    </ol>
+    <div class="card mb-4">
+        <div class="card-header">
+            <i class="fas fa-table me-1"></i>
+            Usuarios
+        </div>
+        <div class="card-body">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Usuario</th>
+                        <th scope="col">Ultima Conexion</th>
+                        <th scope="col">Estado</th>
+                        <th scope="col">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var usuario in Model)
+                    {
+                        <tr>
+                            <td>@usuario.user_id</td>
+                            <td>@usuario.usuario</td>
+                            <td>@usuario.ultimo_login.ToShortDateString()</td>
+                            <td>@usuario.estado_id</td>
+                            <td></td>
+
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

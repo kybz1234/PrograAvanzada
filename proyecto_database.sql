@@ -13,6 +13,7 @@ CREATE TABLE Estado (
 
 INSERT INTO Estado (estado_nombre) VALUES ('Activo'), ('Inactivo');
 
+select * from Estado
 --------------------------------------------------------------------
 
 CREATE TABLE Usuarios (
@@ -36,6 +37,17 @@ CREATE TABLE Productos (
     estado_id INT NOT NULL,
     FOREIGN KEY (estado_id) REFERENCES Estado(estado_id)
 );
+
+alter table Productos add descripcion varchar(max);
+
+alter table Productos add foto nvarchar(max);
+
+alter table Productos add en_descuento bit not null;
+
+alter table Productos add precio_descuento DECIMAL(10, 2);
+
+select * from Productos
+
 
 --------------------------------------------------------------------
 
@@ -97,6 +109,24 @@ BEGIN
 end
 go
 
+--Registrar usuario admin
+
+create proc sp_RegistrarUsuarioAdmin(
+@nombre_usuario nvarchar(50),
+@contraseña_hash nvarchar(max),
+@estado_id nvarchar(10)
+)
+AS
+BEGIN
+	if (not exists(select * from Usuarios where usuario = @nombre_usuario))
+	begin    
+    
+    INSERT INTO Usuarios (usuario, contraseña_hash, estado_id)
+    VALUES (@nombre_usuario, @contraseña_hash, @estado_id)
+	end
+end
+go
+
 --Validar usuario
 
 create proc sp_ValidarUsuario(
@@ -121,3 +151,34 @@ begin
 end
 go
 
+drop proc sp_ValidarUsuario
+
+
+------------------------------------------------------------------------
+
+
+--registrar producto
+
+create proc sp_RegistrarProducto(
+@nombre_producto VARCHAR(100),
+@precio DECIMAL(10, 2),
+@fecha_salida DATETIME,
+@cantidad INT,
+@video_url VARCHAR(255),
+@estado_id INT,
+@descripcion varchar(max),
+@foto nvarchar(max),
+@precio_descuento DECIMAL(10, 2),
+@en_descuento bit
+)
+as
+begin
+	if (not exists(select * from Productos where nombre_producto = @nombre_producto))
+	begin
+		insert into Productos(nombre_producto,precio,fecha_salida,cantidad,video_url,estado_id,descripcion,foto,precio_descuento,en_descuento) 
+					  values (@nombre_producto,@precio,@fecha_salida,@cantidad,@video_url,@estado_id,@descripcion,@foto,@precio_descuento,@en_descuento)
+	end
+end
+
+
+select * from Usuarios

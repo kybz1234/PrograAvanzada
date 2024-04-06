@@ -1,0 +1,69 @@
+﻿@{
+    Layout = "../Shared/Admin_layout.cshtml";
+}
+@model List<Producto>
+
+<div class="container-fluid px-4">
+    <h1 class="mt-4">Productos</h1>
+    <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item"><a asp-area="" asp-controller="Admin" asp-action="Home">Inicio</a></li>
+        <li class="breadcrumb-item active">Tablas</li>
+    </ol>
+    <div class="card mb-4">
+        <div class="card-header">
+            <i class="fas fa-table me-1"></i>
+            Productos
+        </div>
+        <div class="card-body">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">Nombre</th>
+                        <th scope="col">Precio</th>
+                        <th scope="col">Fecha salida</th>
+                        <th scope="col">Cantidad</th>
+                        <th scope="col">Video</th>
+                        <th scope="col">estado_id</th>
+                        <th scope="col">descripcion</th>
+                        <th scope="col">foto</th>
+                        <th scope="col">precio_descuento</th>
+                        <th scope="col">en_descuento</th>
+                        <th scope="col">Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var producto in Model)
+                    {
+                    <tr>
+                            <td>@producto.producto_id</td>
+                            <td>@producto.nombre_producto</td>
+                            <td>@producto.precio</td>
+                            <td>@producto.fecha_salida.ToShortDateString()</td>
+                            <td>@producto.cantidad</td>
+                            <td>@producto.video_url</td>
+                            <td>@producto.estado_id</td>
+                            <td>@producto.descripcion</td>
+                            <td>
+
+                                @if (!string.IsNullOrEmpty(producto.foto))
+                                {
+                                    <img src="data:image;base64,@producto.foto" alt="Foto del Producto" style="max-width: 100px; max-height: 100px;" />
+                                }
+                                else
+                                {
+                                    <span>No hay foto disponible</span>
+                                }
+
+                            </td>
+                            <td>@producto.precio_descuento</td>
+                            <td>@producto.en_descuento</td>
+                            <td></td>
+
+                    </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

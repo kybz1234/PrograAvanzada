@@ -14,10 +14,12 @@ namespace proyectoPrograAvanzadaGrupo1.Controllers
     public class AccesoController : Controller
 
     {
-
-        //conexion a la base de datos
-        static string chain = "Data Source=DESKTOP-3P5MFNR;Initial Catalog=PrograAvanzadaGrupo1;Integrated Security=true; TrustServerCertificate=True";
-
+        //conexion a la base de datos por medio del context
+        private readonly DatabaseContext _context;
+        public AccesoController(DatabaseContext context)
+        {
+            _context = context;
+        }
 
         //iniciar sesion
 
@@ -42,7 +44,7 @@ namespace proyectoPrograAvanzadaGrupo1.Controllers
             {
                 string contraseñaHash = HashPassword(u.contraseña_hash);
 
-                using (SqlConnection cn = new SqlConnection(chain))
+                using (SqlConnection cn = new SqlConnection(_context.Database.GetDbConnection().ConnectionString))
                 {
                     using (SqlCommand cmd = new SqlCommand("sp_ValidarUsuario", cn))
                     {
@@ -114,7 +116,7 @@ namespace proyectoPrograAvanzadaGrupo1.Controllers
 
                     string contraseñaHash = HashPassword(oUser.contraseña_hash);
 
-                    using (SqlConnection cn = new SqlConnection(chain))
+                    using (SqlConnection cn = new SqlConnection(_context.Database.GetDbConnection().ConnectionString))
                   {
                       using (SqlCommand cmd = new SqlCommand("sp_RegistrarUsuario", cn))
                       {

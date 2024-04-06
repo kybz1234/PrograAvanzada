@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "mjgInAQ6B7NUP7jgAReBC4SejAQvGqRukvO5+CyuRn8=",
+  "Hash": "EAmAFGY/XlG1ef6VSJHk/wopDlfXoqejigz4t79tlZI=",
   "Source": "proyectoPrograAvanzadaGrupo1",
   "BasePath": "_content/proyectoPrograAvanzadaGrupo1",
   "Mode": "Default",
@@ -889,6 +889,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "D:\\GIT\\repositories\\PrograAvanzada\\proyectoPrograAvanzadaGrupo1\\proyectoPrograAvanzadaGrupo1\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\proyectoPrograAvanzadaGrupo1.bundle.scp.css"
+    },
+    {
+      "Identity": "D:\\GIT\\repositories\\PrograAvanzada\\proyectoPrograAvanzadaGrupo1\\proyectoPrograAvanzadaGrupo1\\wwwroot\\css\\admin.css",
+      "SourceId": "proyectoPrograAvanzadaGrupo1",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\GIT\\repositories\\PrograAvanzada\\proyectoPrograAvanzadaGrupo1\\proyectoPrograAvanzadaGrupo1\\wwwroot\\",
+      "BasePath": "_content/proyectoPrograAvanzadaGrupo1",
+      "RelativePath": "css/admin.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\admin.css"
     },
     {
       "Identity": "D:\\GIT\\repositories\\PrograAvanzada\\proyectoPrograAvanzadaGrupo1\\proyectoPrograAvanzadaGrupo1\\wwwroot\\css\\site.css",
