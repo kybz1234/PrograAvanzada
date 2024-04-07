@@ -1,0 +1,50 @@
+﻿@{
+    Layout = "../Shared/Admin_layout.cshtml";
+}
+@model User;
+
+<div class="container-fluid px-4">
+    <h1 class="mt-4">Agregar Usuario</h1>
+    <ol class="breadcrumb mb-4">
+        <li class="breadcrumb-item"><a asp-area="" asp-controller="Admin" asp-action="Home">Inicio</a></li>
+        <li class="breadcrumb-item active">Agregar</li>
+        <li class="breadcrumb-item active">Usuario</li>
+    </ol>
+    <div class="card mb-4">
+        <div class="card-header">
+            <i class="fas fa-table me-1"></i>
+            Usuario
+        </div>
+<div class="card-body">
+    <div class="container mt-3">
+        <form enctype="multipart/form-data" method="POST">
+            <input type="hidden" asp-for="user_id" />
+            <input type="hidden" id="ultimo_login" name="ultimo_login" asp-for="ultimo_login" class="form-control" value="@DateTime.Now" required>
+            <div class="mb-3">
+                <label for="nombre_usuario" class="form-label">Nombre de Usuario:</label>
+                <input type="text" id="nombre_usuario" name="usuario" asp-for="usuario" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label for="contraseña" class="form-label">Contraseña:</label>
+                <input type="password" id="contraseña" name="contraseña_hash" asp-for="contraseña_hash" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label for="estado" class="form-label">Estado:</label>
+                <select id="estado" name="estado_id" asp-for="estado_id" class="form-select" required>
+                    <option value="1">Activo</option>
+                    <option value="2">Inactivo</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-success" asp-controller="Admin" asp-action="EditarUsuario">Editar Usuario</button>
+           
+        </form>
+                <a class="btn btn-primary" asp-controller="Admin" asp-action="UsuariosTable">Volver</a>
+
+        <label class="alert.danger">@ViewBag.error</label>
+    </div>
+
+        </div>
+
+    </div>
+
+</div>

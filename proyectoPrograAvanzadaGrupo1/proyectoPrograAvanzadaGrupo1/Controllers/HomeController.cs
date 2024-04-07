@@ -10,6 +10,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace proyectoPrograAvanzadaGrupo1.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
 
@@ -30,6 +31,8 @@ namespace proyectoPrograAvanzadaGrupo1.Controllers
         {
 
             var username = HttpContext.User.Identity.Name;
+            
+
             ViewData["Username"] = username;
 
             List<Producto> Productos = _context.Productos.ToList();
@@ -39,6 +42,16 @@ namespace proyectoPrograAvanzadaGrupo1.Controllers
         public IActionResult Privacy()
         {
             return View();
+        }
+
+        public IActionResult Ofertas()
+        {
+
+            var username = HttpContext.User.Identity.Name;
+            ViewData["Username"] = username;
+
+            List<Producto> Productos = _context.Productos.ToList();
+            return View(Productos);
         }
 
         public async Task<IActionResult> CerrarSesion()

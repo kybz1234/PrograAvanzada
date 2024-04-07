@@ -24,11 +24,11 @@
                         <th scope="col">Fecha salida</th>
                         <th scope="col">Cantidad</th>
                         <th scope="col">Video</th>
-                        <th scope="col">estado_id</th>
+                        <th scope="col">estado</th>
                         <th scope="col">descripcion</th>
                         <th scope="col">foto</th>
-                        <th scope="col">precio_descuento</th>
-                        <th scope="col">en_descuento</th>
+                        <th scope="col">precio descuento</th>
+                        <th scope="col">en descuento?</th>
                         <th scope="col">Acciones</th>
                     </tr>
                 </thead>
@@ -42,7 +42,17 @@
                             <td>@producto.fecha_salida.ToShortDateString()</td>
                             <td>@producto.cantidad</td>
                             <td>@producto.video_url</td>
-                            <td>@producto.estado_id</td>
+                            <td>
+                                @if (producto.estado_id == 1)
+                                {
+                                    <p>Activo</p>
+                                }
+                                else
+                                {
+                                    <p>Inactivo</p>
+                                }
+
+                            </td>
                             <td>@producto.descripcion</td>
                             <td>
 
@@ -57,8 +67,29 @@
 
                             </td>
                             <td>@producto.precio_descuento</td>
-                            <td>@producto.en_descuento</td>
-                            <td></td>
+                            <td>
+
+                                @if (@producto.en_descuento == true)
+                                {
+                                    <p>SI</p>
+                                }
+                                else
+                                {
+                                    <p>NO</p>
+                                }
+
+                            </td>
+                            <td>
+                                <form method="get" enctype="multipart/form-data">
+                                    <input type="hidden" name="producto_id" value="@producto.producto_id" />
+                                    <button type="submit" class="btn btn-warning mb-2 mt-2" asp-controller="Admin" asp-action="EditarProducto" asp-route-id="@producto.producto_id">Editar</button>
+                                </form>
+                                <form method="post" enctype="multipart/form-data">
+                                    <input type="hidden" name="producto_id" value="@producto.producto_id" />
+                                    <button type="submit" class="btn btn-danger" asp-controller="Admin" asp-action="EliminarProducto">Eliminar</button>
+                                </form>
+
+                            </td>
 
                     </tr>
                     }

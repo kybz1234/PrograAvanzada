@@ -32,8 +32,32 @@
                             <td>@usuario.user_id</td>
                             <td>@usuario.usuario</td>
                             <td>@usuario.ultimo_login.ToShortDateString()</td>
-                            <td>@usuario.estado_id</td>
-                            <td></td>
+                            <td>
+                                @if (usuario.estado_id == 1)
+                                {
+
+                                    <p>Activo</p>
+
+                                }
+                                else
+                                {
+
+                                    <p>Inactivo</p>
+                                    
+                                }
+
+                            </td>
+                            <td>
+
+                                <form method="get" enctype="multipart/form-data">
+                                    <input type="hidden" name="user_id" value="@usuario.user_id" />
+                                    <button type="submit" class="btn btn-warning mb-2 mt-2" asp-controller="Admin" asp-action="EditarUsuario" asp-route-id="@usuario.user_id">Editar</button>
+                                </form>
+                                <form method="post" enctype="multipart/form-data">
+                                    <input type="hidden" name="user_id" value="@usuario.user_id" />
+                                    <button type="submit" class="btn btn-danger" asp-controller="Admin" asp-action="EliminarUsuario">Eliminar</button>
+                                </form>
+                            </td>
 
                         </tr>
                     }

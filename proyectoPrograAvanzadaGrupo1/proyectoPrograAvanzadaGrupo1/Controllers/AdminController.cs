@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Components.Routing;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using proyectoPrograAvanzadaGrupo1.Models;
@@ -8,6 +10,7 @@ using System.Text;
 
 namespace proyectoPrograAvanzadaGrupo1.Controllers
 {
+    [Authorize]
     public class AdminController : Controller
 
     {
@@ -29,6 +32,8 @@ namespace proyectoPrograAvanzadaGrupo1.Controllers
             return View();
         }
 
+        //Acciones de Agregar
+
         public IActionResult AgregarProducto()
         {
 
@@ -38,6 +43,7 @@ namespace proyectoPrograAvanzadaGrupo1.Controllers
 
             return View();
         }
+
 
         [HttpPost]
         public ActionResult AgregarProducto(Producto oProducto)
@@ -98,35 +104,6 @@ namespace proyectoPrograAvanzadaGrupo1.Controllers
 
         }
 
-        public IActionResult ProductoTable()
-        {
-
-            var username = HttpContext.User.Identity.Name;
-
-            ViewData["Username"] = username;
-
-
-            List<Producto> Productos = _context.Productos.ToList();
-            return View(Productos);
-
-
-        }
-
-        public IActionResult UsuariosTable()
-        {
-
-            var username = HttpContext.User.Identity.Name;
-
-            ViewData["Username"] = username;
-
-
-            List<User> Usuarios = _context.Usuarios.ToList();
-            return View(Usuarios);
-
-
-        }
-
-
         public IActionResult AgregarUsuario()
         {
 
@@ -178,6 +155,146 @@ namespace proyectoPrograAvanzadaGrupo1.Controllers
             return RedirectToAction("Home", "Admin");
         }
 
+        // Acciones de Mostrar Tabla
+
+        public IActionResult ProductoTable()
+        {
+
+            var username = HttpContext.User.Identity.Name;
+
+            ViewData["Username"] = username;
+
+
+            List<Producto> Productos = _context.Productos.ToList();
+            return View(Productos);
+
+
+        }
+
+        public IActionResult UsuariosTable()
+        {
+
+            var username = HttpContext.User.Identity.Name;
+
+            ViewData["Username"] = username;
+
+
+            List<User> Usuarios = _context.Usuarios.ToList();
+            return View(Usuarios);
+
+
+        }
+
+
+        // Acciones de Eliminar
+
+        public IActionResult EliminarUsuario(int user_id)
+        {
+
+            User usuarioAEliminar = _context.Usuarios.Find(user_id);
+            if (usuarioAEliminar != null)
+            {
+
+                _context.Usuarios.Remove(usuarioAEliminar);
+                _context.SaveChanges();
+
+            }
+            
+
+            return RedirectToAction("UsuariosTable", "Admin");
+        }
+
+        public IActionResult EliminarProducto(int producto_id)
+        {
+
+            Producto productoAEliminar = _context.Productos.Find(producto_id);
+            if (productoAEliminar != null)
+            {
+
+                _context.Productos.Remove(productoAEliminar);
+                _context.SaveChanges();
+
+            }
+
+
+            return RedirectToAction("ProductoTable", "Admin");
+        }
+
+        //Acciones de Editar
+
+        public IActionResult EditarUsuario()
+        {
+
+            var username = HttpContext.User.Identity.Name;
+
+            ViewData["Username"] = username;
+
+            return View();
+        }
+
+        [HttpGet]
+        public IActionResult EditarUsuario(int user_id)
+        {
+            User usuarioAEditar = _context.Usuarios.Find(user_id);
+            return View();
+
+        }
+
+        [HttpPost]
+        public IActionResult EditarUsuario(User ModifiedData)
+        {
+
+            string contraseñaHash = HashPassword(ModifiedData.contraseña_hash);
+            ModifiedData.contraseña_hash = contraseñaHash;
+
+            _context.Update(ModifiedData);
+            _context.SaveChanges();
+            return RedirectToAction("UsuariosTable", "Admin");
+
+        }
+
+        public IActionResult EditarProducto()
+        {
+
+            var username = HttpContext.User.Identity.Name;
+
+            ViewData["Username"] = username;
+
+            return View();
+        }
+
+        [HttpGet]
+        public IActionResult EditarProducto(int producto_id)
+        {
+            Producto productoAEditar = _context.Productos.Find(producto_id);
+            return View();
+
+        }
+
+        [HttpPost]
+        public IActionResult EditarProducto(Producto ModifiedData)
+        {
+            byte[] bytes;
+            using (Stream fs = ModifiedData.File.OpenReadStream())
+            {
+                using (BinaryReader br = new(fs))
+                {
+                    bytes = br.ReadBytes((int)fs.Length);
+                    ModifiedData.foto = Convert.ToBase64String(bytes, 0, bytes.Length);
+
+
+
+                    _context.Update(ModifiedData);
+                    _context.SaveChanges();
+                    return RedirectToAction("ProductoTable", "Admin");
+
+                }
+
+            }
+
+        }
+
+
         //encriptar el password
 
         private string HashPassword(string password)
@@ -194,6 +311,9 @@ namespace proyectoPrograAvanzadaGrupo1.Controllers
                 return builder.ToString();
             }
         }
+
+        
+
 
     }
     

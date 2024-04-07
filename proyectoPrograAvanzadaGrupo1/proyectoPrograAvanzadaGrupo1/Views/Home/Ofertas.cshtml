@@ -10,6 +10,7 @@
                 <div class="text-center text-dark">
                 <img src="~/img/Logo.png" alt="logo" width="300">
             <p class="lead fw-normal text-dark-50 mb-0">¡Bienvenido, @ViewData["Username"]!</p>
+            <p class="lead fw-normal text-dark-50 mb-0">Estas son las Ofertas del Dia</p>
                 </div>
             </div>
         </header>
@@ -18,46 +19,12 @@
             <div class="container px-4 px-lg-5 mt-5">
                 <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
 
-            <!------------------------------------------------------------- Producto Normal ---------------------------------------------------------------------->
+            <!------------------------------------------------------------- Producto descuento ---------------------------------------------------------------------->
                 @foreach (var producto in Model)
                 {
 
-                    @if(producto.en_descuento == false && producto.estado_id == 1)
+                    @if(producto.en_descuento == true && producto.estado_id == 1)
                     {
-
-                    <div class="col mb-5">
-                        <div class="card h-100">
-                            <!-- Product image-->
-                            @if (!string.IsNullOrEmpty(producto.foto))
-                            {
-                                <img src="data:image;base64,@producto.foto" alt="Foto del Producto" style="max-width: 450px; max-height: 300px;" />
-                            }
-                            else
-                            {
-                                <span>No hay foto disponible</span>
-                            }
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <!-- Product name-->
-                                    <h5 class="fw-bolder">@producto.nombre_producto</h5>
-                                    <!-- Product price-->
-                                    $@producto.precio
-                                </div>
-                            </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
-                            </div>
-                        </div>
-                    </div>
-                    <!------------------------------------------------------------- Producto Normal ---------------------------------------------------------------------->
-
-                }
-                else if (producto.en_descuento == true && producto.estado_id == 1)
-                {
-
-                    <!------------------------------------------------------------- Producto descuento ---------------------------------------------------------------------->
 
                     <div class="col mb-5">
                         <div class="card h-100">
@@ -96,8 +63,12 @@
                             </div>
                         </div>
                     </div>
+                    <!------------------------------------------------------------- Producto descuento ---------------------------------------------------------------------->
 
-                    <!------------------------------------------------------------- Producto descuento ---------------------------------------------------------------------->                  
+                }
+                else 
+                {
+                
 
                 }
 
