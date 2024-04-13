@@ -13,5 +13,6 @@ namespace proyectoPrograAvanzadaGrupo1.Models
         public DbSet<User> Usuarios { get; set; }
 
         public DbSet<Producto> Productos { get; set; }
+
     }
 }

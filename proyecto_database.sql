@@ -26,7 +26,6 @@ CREATE TABLE Usuarios (
 );
 
 --------------------------------------------------------------------
-
 CREATE TABLE Productos (
     producto_id INT PRIMARY KEY IDENTITY,
     nombre_producto VARCHAR(100) NOT NULL,
