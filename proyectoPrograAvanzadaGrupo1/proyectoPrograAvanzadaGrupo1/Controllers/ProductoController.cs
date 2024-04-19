@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using proyectoPrograAvanzadaGrupo1.Models;
+using System.Linq;
 
 public class ProductoController : Controller
 {
