@@ -25,7 +25,17 @@ CREATE TABLE Usuarios (
     FOREIGN KEY (estado_id) REFERENCES Estado(estado_id)
 );
 
+alter table usuarios add esAdmin bit;
+
+update usuarios set esAdmin = 1 where user_id = 1;
+update usuarios set esAdmin = 0 where user_id = 2;
+update usuarios set esAdmin = 0 where user_id = 3;
+update usuarios set esAdmin = 0 where user_id = 6;
+
+select * from Usuarios
+
 --------------------------------------------------------------------
+
 CREATE TABLE Productos (
     producto_id INT PRIMARY KEY IDENTITY,
     nombre_producto VARCHAR(100) NOT NULL,

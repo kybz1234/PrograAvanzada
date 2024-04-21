@@ -21,6 +21,8 @@ namespace proyectoPrograAvanzadaGrupo1.Models
         [Required]
         public int estado_id { get; set; }
 
+        public Boolean esAdmin {  get; set; }
+
         [NotMapped]
         public bool MantenerActivo { get; set; }
 

@@ -34,6 +34,12 @@ namespace proyectoPrograAvanzadaGrupo1.Controllers
             
 
             ViewData["Username"] = username;
+            if (TempData.ContainsKey("IsAdmin"))
+            {
+                ViewData["IsAdmin"] = TempData["IsAdmin"];
+            }
+
+            TempData["IsAdmin"] = TempData["IsAdmin"];
 
             List<Producto> Productos = _context.Productos.ToList();
             return View(Productos);
@@ -46,6 +52,12 @@ namespace proyectoPrograAvanzadaGrupo1.Controllers
 
         public IActionResult Ofertas()
         {
+
+            if (TempData.ContainsKey("IsAdmin"))
+            {
+                ViewData["IsAdmin"] = TempData["IsAdmin"];
+            }
+            TempData["IsAdmin"] = TempData["IsAdmin"];
 
             var username = HttpContext.User.Identity.Name;
             ViewData["Username"] = username;

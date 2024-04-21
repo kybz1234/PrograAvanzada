@@ -16,11 +16,27 @@ public class ProductoController : Controller
     {
         var producto = _context.Productos.Find(id);
 
+        if (TempData.ContainsKey("IsAdmin"))
+        {
+            ViewData["IsAdmin"] = TempData["IsAdmin"];
+        }
+        TempData["IsAdmin"] = TempData["IsAdmin"];
+
         if (producto == null)
         {
             return NotFound();
         }
 
+        var randomProductos = _context.Productos
+            .Where(p => p.producto_id != id && p.estado_id == 1) // Excluir el producto actual y solo activos
+            .OrderBy(x => Guid.NewGuid())
+            .Take(4)
+            .ToList();
+            
+
+        ViewBag.RelatedProducts = randomProductos;
+
         return View(producto);
     }
+
 }

@@ -21,7 +21,15 @@ namespace proyectoPrograAvanzadaGrupo1.Controllers
             _context = context;
         }
 
+
         //iniciar sesion
+
+        public bool GetAdminStatus(string username)
+        {
+            // Lógica para obtener el estado esAdmin del usuario (por ejemplo, consulta a la base de datos)
+            var user = _context.Usuarios.FirstOrDefault(u => u.usuario == username);
+            return user != null && user.esAdmin; // Devuelve true si el usuario es admin, de lo contrario, devuelve false
+        }
 
         public ActionResult Login()
         {
@@ -77,6 +85,9 @@ namespace proyectoPrograAvanzadaGrupo1.Controllers
                                     p.ExpiresUtc = DateTimeOffset.MaxValue;
                                 }
                                 await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(ci), p);
+                                bool isAdmin = GetAdminStatus(u.usuario); // Obtener el estado de administrador
+                                ViewBag.IsAdmin = isAdmin; // Asignar el estado de administrador a ViewBag
+                                TempData["IsAdmin"] = isAdmin;
                                 return RedirectToAction("Index", "Home");
                             }
                             else
@@ -88,7 +99,10 @@ namespace proyectoPrograAvanzadaGrupo1.Controllers
                     }
 
                     return View();
+
+
                 }
+
             }
             catch (System.Exception e)
             {
