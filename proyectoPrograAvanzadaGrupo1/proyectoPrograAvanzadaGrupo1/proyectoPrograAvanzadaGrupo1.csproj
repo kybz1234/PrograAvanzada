@@ -16,4 +16,9 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Views\DetallePedido\" />
+    <Folder Include="Views\Carrito\" />
+  </ItemGroup>
+
 </Project>

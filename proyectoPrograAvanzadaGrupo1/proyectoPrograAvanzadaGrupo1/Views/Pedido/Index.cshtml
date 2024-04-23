@@ -1,0 +1,27 @@
+﻿@model IEnumerable<proyectoPrograAvanzadaGrupo1.Models.Pedido>
+
+<h1>Listado de Pedidos</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID del Pedido</th>
+            <th>Fecha del Pedido</th>
+            <th>Total</th>
+            <th>Usuario</th>
+            <th>Detalles</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var pedido in Model)
+        {
+            <tr>
+                <td>@pedido.orden_id</td>
+                <td>@pedido.fecha_pedido.ToString("dd/MM/yyyy HH:mm:ss")</td>
+                <td>@pedido.total.ToString("C")</td>
+                <td>@pedido.User.usuario</td>
+                <td><a href="@Url.Action("PedidoDetail", "Pedido", new { id = pedido.orden_id })">Ver Detalles</a></td>
+            </tr>
+        }
+    </tbody>
+</table>

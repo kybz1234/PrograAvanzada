@@ -4432,19 +4432,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\cquir\\.nuget\\packages\\": {}
+    "C:\\Users\\death\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\GIT\\repositories\\PrograAvanzada\\proyectoPrograAvanzadaGrupo1\\proyectoPrograAvanzadaGrupo1\\proyectoPrograAvanzadaGrupo1.csproj",
+      "projectUniqueName": "C:\\Users\\death\\OneDrive\\Documentos\\La Uni\\GitHub\\PrograAvanzada\\PrograAvanzada\\proyectoPrograAvanzadaGrupo1\\proyectoPrograAvanzadaGrupo1\\proyectoPrograAvanzadaGrupo1.csproj",
       "projectName": "proyectoPrograAvanzadaGrupo1",
-      "projectPath": "D:\\GIT\\repositories\\PrograAvanzada\\proyectoPrograAvanzadaGrupo1\\proyectoPrograAvanzadaGrupo1\\proyectoPrograAvanzadaGrupo1.csproj",
-      "packagesPath": "C:\\Users\\cquir\\.nuget\\packages\\",
-      "outputPath": "D:\\GIT\\repositories\\PrograAvanzada\\proyectoPrograAvanzadaGrupo1\\proyectoPrograAvanzadaGrupo1\\obj\\",
+      "projectPath": "C:\\Users\\death\\OneDrive\\Documentos\\La Uni\\GitHub\\PrograAvanzada\\PrograAvanzada\\proyectoPrograAvanzadaGrupo1\\proyectoPrograAvanzadaGrupo1\\proyectoPrograAvanzadaGrupo1.csproj",
+      "packagesPath": "C:\\Users\\death\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\death\\OneDrive\\Documentos\\La Uni\\GitHub\\PrograAvanzada\\PrograAvanzada\\proyectoPrograAvanzadaGrupo1\\proyectoPrograAvanzadaGrupo1\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\cquir\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\death\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -4464,6 +4464,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -4508,7 +4513,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

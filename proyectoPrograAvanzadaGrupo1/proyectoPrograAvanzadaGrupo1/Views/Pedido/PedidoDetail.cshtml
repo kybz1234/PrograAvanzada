@@ -1,0 +1,36 @@
+﻿@model proyectoPrograAvanzadaGrupo1.Models.Pedido
+
+<h1>Detalles del Pedido</h1>
+
+<div>
+    <p><strong>ID del Pedido:</strong> @Model.orden_id</p>
+    <p><strong>Fecha del Pedido:</strong> @Model.fecha_pedido.ToString("dd/MM/yyyy HH:mm:ss")</p>
+    <p><strong>Total:</strong> @Model.total.ToString("C")</p>
+    <p><strong>Usuario:</strong> @Model.User.usuario</p>
+</div>
+
+<hr />
+
+<h2>Detalles de los Productos</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID del Producto</th>
+            <th>Nombre del Producto</th>
+            <th>Cantidad</th>
+            <th>Precio Unitario</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var detalle in Model.DetallesPedido)
+        {
+            <tr>
+                <td>@detalle.product_id</td>
+                <td>@detalle.Producto.nombre_producto</td>
+                <td>@detalle.Cantidad</td>
+                <td>@detalle.Precio.ToString("C")</td>
+            </tr>
+        }
+    </tbody>
+</table>

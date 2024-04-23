@@ -49,6 +49,12 @@
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
                                 <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">Add to cart</a></div>
                             </div>
+                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                                <div class="text-center">
+                                    <a class="btn btn-outline-dark mt-auto" href="@Url.Action("ProductoDetail", "Producto", new { id = producto.producto_id })">View Details</a>
+                                </div>
+                            </div>
+
                         </div>
                     </div>
                     <!------------------------------------------------------------- Producto Normal ---------------------------------------------------------------------->
@@ -111,3 +117,12 @@
                 </div>
             </div>
         </section>
+
+<div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+    <div class="text-center">
+        @if (Url != null)
+        {
+            <a class="btn btn-outline-dark mt-auto" href="@Url.Action("Index", "Pedido")">View Orders</a>
+        }
+    </div>
+</div>

@@ -26,5 +26,7 @@ namespace proyectoPrograAvanzadaGrupo1.Models
         [NotMapped]
         public bool MantenerActivo { get; set; }
 
+        public ICollection<Pedido> Pedidos { get; set; }
+
     }
 }
