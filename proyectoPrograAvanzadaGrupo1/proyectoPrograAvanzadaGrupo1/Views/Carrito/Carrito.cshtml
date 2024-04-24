@@ -1,0 +1,59 @@
+﻿@model List<proyectoPrograAvanzadaGrupo1.Models.Carrito>
+
+@{
+    ViewData["Title"] = "Carrito";
+}
+
+<h1>Carrito de Compras</h1>
+
+@if (Model.Count > 0)
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Producto</th>
+                <th>Cantidad</th>
+                <th>Precio Unitario</th>
+                <th>Total</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Producto.nombre_producto</td>
+                    <td>@item.Cantidad</td>
+                    <td>$@item.Producto.precio</td>
+                    <td>$@(item.Cantidad * item.Producto.precio)</td>
+                    <td>
+                        <a asp-action="Detalles" asp-route-id="@item.CarritoId">Detalles</a> |
+                        <a asp-action="Edit" asp-route-id="@item.CarritoId">Editar</a> |
+                        <a asp-action="Delete" asp-route-id="@item.CarritoId">Eliminar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <div class="text-right">
+        <h4>Total: $@ObtenerTotal()</h4>
+        <a asp-action="Create" class="btn btn-primary">Agregar Producto</a>
+    </div>
+}
+else
+{
+    <p>No hay productos en el carrito.</p>
+}
+
+@functions {
+    public decimal ObtenerTotal()
+    {
+        decimal total = 0;
+        foreach (var item in Model)
+        {
+            total += item.Cantidad * item.Producto.precio;
+        }
+        return total;
+    }
+}
