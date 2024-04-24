@@ -66,8 +66,8 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/death/OneDrive/Documentos/La Uni/GitHub/PrograAvanzada/PrograAvanzada/proyectoPrograAvanzadaGrupo1/proyectoPrograAvanzadaGrupo1/Views/Pedido/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVkaWRvXEluZGV4LmNzaHRtbA==
+[C:/Users/death/OneDrive/Documentos/La Uni/GitHub/PrograAvanzada/PrograAvanzada/proyectoPrograAvanzadaGrupo1/proyectoPrograAvanzadaGrupo1/Views/Pedido/IndexPedido.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVkaWRvXEluZGV4UGVkaWRvLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/death/OneDrive/Documentos/La Uni/GitHub/PrograAvanzada/PrograAvanzada/proyectoPrograAvanzadaGrupo1/proyectoPrograAvanzadaGrupo1/Views/Pedido/PedidoDetail.cshtml]
@@ -76,6 +76,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/death/OneDrive/Documentos/La Uni/GitHub/PrograAvanzada/PrograAvanzada/proyectoPrograAvanzadaGrupo1/proyectoPrograAvanzadaGrupo1/Views/Producto/ProductoDetail.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9cUHJvZHVjdG9EZXRhaWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/death/OneDrive/Documentos/La Uni/GitHub/PrograAvanzada/PrograAvanzada/proyectoPrograAvanzadaGrupo1/proyectoPrograAvanzadaGrupo1/Views/Producto/ViewPedido.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9cVmlld1BlZGlkby5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/death/OneDrive/Documentos/La Uni/GitHub/PrograAvanzada/PrograAvanzada/proyectoPrograAvanzadaGrupo1/proyectoPrograAvanzadaGrupo1/Views/Shared/Admin_layout.cshtml]

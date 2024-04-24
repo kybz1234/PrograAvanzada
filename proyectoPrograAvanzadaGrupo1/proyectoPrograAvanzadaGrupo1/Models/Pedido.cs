@@ -8,15 +8,15 @@ namespace proyectoPrograAvanzadaGrupo1.Models
     public class Pedido
     {
         [Key]
-        public int orden_id { get; set; }
+        public int Orden_id { get; set; }
 
-        public int user_id { get; set; }
+        public int User_id { get; set; }
 
         [DataType(DataType.DateTime)]
-        public DateTime fecha_pedido { get; set; }
+        public DateTime Fecha_pedido { get; set; }
 
         [Column(TypeName = "decimal(10, 2)")]
-        public decimal total { get; set; }
+        public decimal Total { get; set; }
 
         // Relación con la tabla Usuario (User)
         [ForeignKey("user_id")]

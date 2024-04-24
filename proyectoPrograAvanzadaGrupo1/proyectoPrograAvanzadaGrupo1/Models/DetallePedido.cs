@@ -3,26 +3,29 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace proyectoPrograAvanzadaGrupo1.Models
 {
+    [Table("Detalles_de_pedidos")]
     public class DetallePedido
     {
         [Key]
-        public int detalle_id { get; set; }
+        [Column("detalle_id")]
+        public int DetalleId { get; set; }
 
-        public int orden_id { get; set; }
+        [Column("orden_id")]
+        public int OrdenId { get; set; }
 
-        public int product_id { get; set; }
+        [Column("product_id")]
+        public int ProductId { get; set; }
 
+        [Column("cantidad")]
         public int Cantidad { get; set; }
 
-        [Column(TypeName = "decimal(10, 2)")]
+        [Column("precio")]
         public decimal Precio { get; set; }
 
-        // Relación con la tabla Pedido
-        [ForeignKey("orden_id")]
+        [ForeignKey("OrdenId")]
         public Pedido Pedido { get; set; }
 
-        // Relación con la tabla Producto
-        [ForeignKey("product_id")]
+        [ForeignKey("ProductId")]
         public Producto Producto { get; set; }
     }
 }

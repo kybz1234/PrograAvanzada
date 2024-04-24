@@ -3,9 +3,9 @@
 <h1>Detalles del Pedido</h1>
 
 <div>
-    <p><strong>ID del Pedido:</strong> @Model.orden_id</p>
-    <p><strong>Fecha del Pedido:</strong> @Model.fecha_pedido.ToString("dd/MM/yyyy HH:mm:ss")</p>
-    <p><strong>Total:</strong> @Model.total.ToString("C")</p>
+    <p><strong>ID del Pedido:</strong> @Model.Orden_id</p>
+    <p><strong>Fecha del Pedido:</strong> @Model.Fecha_pedido.ToString("dd/MM/yyyy HH:mm:ss")</p>
+    <p><strong>Total:</strong> @Model.Total.ToString("C")</p>
     <p><strong>Usuario:</strong> @Model.User.usuario</p>
 </div>
 
@@ -26,7 +26,7 @@
         @foreach (var detalle in Model.DetallesPedido)
         {
             <tr>
-                <td>@detalle.product_id</td>
+                <td>@detalle.ProductId</td>
                 <td>@detalle.Producto.nombre_producto</td>
                 <td>@detalle.Cantidad</td>
                 <td>@detalle.Precio.ToString("C")</td>
