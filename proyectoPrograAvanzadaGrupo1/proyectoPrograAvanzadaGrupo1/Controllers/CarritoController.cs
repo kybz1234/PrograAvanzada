@@ -139,15 +139,14 @@ namespace proyectoPrograAvanzadaGrupo1.Controllers
         {
             return _context.Carrito.Any(e => e.CarritoId == id);
         }
-        public decimal GetTotal()
+        public decimal ObetenerTotal()
         {
-            var carritoItems = _context.Carrito.Include(c => c.Producto).ToList();
+            var ItemsCarrito = _context.Carrito.Include(c => c.Producto).ToList();
 
             decimal total = 0;
 
-            foreach (var item in carritoItems)
+            foreach (var item in ItemsCarrito)
             {
-                // Suponiendo que Producto tiene una propiedad Precio
                 total += item.Cantidad * item.Producto.precio;
             }
 
